@@ -1,27 +1,31 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './L eaderboard.css'; // Importing CSS for styling
+import './Leaderboard.css'; // Importing CSS for styling
 
 const Leaderboard = () => {
-    const [leaderboard, setLeaderboard] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [leaderboard, setLeaderboard] = useState([
+        { username: 'TestUser1', total_score: 90, quizzes_taken: 2 },
+        { username: 'TestUser2', total_score: 85, quizzes_taken: 3 }
+    ]);
+    const [loading, setLoading] = useState(false);
+    //const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchLeaderboard = async () => {
-            try {
-                const response = await axios.get('/leaderboard');
-                setLeaderboard(response.data);
-            } catch (err) {
-                setError('Error fetching leaderboard data. Please try again later.');
-            } finally {
-                setLoading(false);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchLeaderboard = async () => {
+    //         try {
+    //             const response = await axios.get('/leaderboard');
+    //             setLeaderboard(response.data);
+    //         } catch (err) {
+    //             setError('Error fetching leaderboard data. Please try again later.');
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     };
 
-        fetchLeaderboard();
-    }, []);
+    //     fetchLeaderboard();
+    // }, []);
 
     if (loading) {
         return <div className="loading">Loading...</div>;
