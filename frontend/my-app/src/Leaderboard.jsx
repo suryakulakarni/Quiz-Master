@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Leaderboard.css'; // Importing CSS for styling
+import './L eaderboard.css'; // Importing CSS for styling
 
 const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);

@@ -1,12 +1,15 @@
-const mysql=require('mysql2');
-const db=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'MySql@3212',
-    database:'quiz'
+const mysql = require('mysql2'); // Not mysql2/promise!
+require('dotenv').config(); // Optional if using .env
+
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: 'MySql@3212',
+  database: 'quiz',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
-db.connect((err)=>{
-    if(err) throw err;
-    console.log('Connected to MySQL database');
-});
-module.exports=db;
+
+// ✅ Export the promise-based version
+module.exports = pool.promise();
