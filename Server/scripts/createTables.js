@@ -48,9 +48,9 @@
 //         );
 //       `);
   
-//       console.log("✅ Tables created successfully.");
+//       console.log("Tables created successfully.");
 //     } catch (error) {
-//       console.error("❌ Error creating tables:", error);
+//       console.error("Error creating tables:", error);
 //     }
 //   };
   
@@ -71,9 +71,9 @@ const createTables = async () => {
         is_approved BOOLEAN DEFAULT false
       );
     `);
-    console.log("✅ users_model table created.");
+    console.log("users_model table created.");
   } catch (error) {
-    console.error("❌ Error creating users_model table:", error.message);
+    console.error("Error creating users_model table:", error.message);
   }
 
   // QUIZZES TABLE
@@ -89,9 +89,9 @@ const createTables = async () => {
         autoGrade BOOLEAN DEFAULT true
       );
     `);
-    console.log("✅ quizes table created.");
+    console.log("quizes table created.");
   } catch (error) {
-    console.error("❌ Error creating quizes table:", error.message);
+    console.error("Error creating quizes table:", error.message);
   }
 
   // QUIZ QUESTIONS TABLE
@@ -107,9 +107,9 @@ const createTables = async () => {
         FOREIGN KEY (quiz_id) REFERENCES quizes(id) ON DELETE CASCADE
       );
     `);
-    console.log("✅ quizquestions table created.");
+    console.log("quizquestions table created.");
   } catch (error) {
-    console.error("❌ Error creating quizquestions table:", error.message);
+    console.error("Error creating quizquestions table:", error.message);
   }
 
   // LEADERBOARD TABLE
@@ -125,9 +125,9 @@ const createTables = async () => {
         FOREIGN KEY (quiz_id) REFERENCES quizes(id) ON DELETE CASCADE
       );
     `);
-    console.log("✅ leaderboard table created.");
+    console.log("leaderboard table created.");
   } catch (error) {
-    console.error("❌ Error creating leaderboard table:", error.message);
+    console.error("Error creating leaderboard table:", error.message);
   }
 };
 

@@ -6,7 +6,8 @@ import './Leaderboard.css'; // Importing CSS for styling
 const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([
         { username: 'TestUser1', total_score: 90, quizzes_taken: 2 },
-        { username: 'TestUser2', total_score: 85, quizzes_taken: 3 }
+        { username: 'TestUser2', total_score: 56, quizzes_taken: 4 },
+        { username: 'TestUser3', total_score: 85, quizzes_taken: 3 }
     ]);
     const [loading, setLoading] = useState(false);
     //const [loading, setLoading] = useState(true);
